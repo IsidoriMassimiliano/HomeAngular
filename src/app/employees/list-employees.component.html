@@ -1,0 +1,12 @@
+<button (click)="nextEmployee()" class="btn btn-primary">
+  View Next Employee
+</button>
+<br/><br/>
+<h1>
+  {{ dataFromChild?.name + ' ' + dataFromChild?.gender }}
+</h1>
+<div *ngFor="let employee of employees">
+  <app-employee-display [employee]="employee"
+                        (notify)="handleNotify($event)">
+  </app-employee-display>
+</div>
